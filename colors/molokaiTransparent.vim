@@ -18,7 +18,7 @@ if version > 580
         syntax reset
     endif
 endif
-let g:colors_name="molokai"
+let g:colors_name="molokaiTransparent"
 
 
 
@@ -77,10 +77,10 @@ hi SpecialChar     guifg=#F92672               gui=bold
 hi SpecialComment  guifg=#7E8E91               gui=bold
 hi Special         guifg=#66D9EF guibg=bg      gui=italic
 if has("spell")
-    hi SpellBad    guisp=#FF0000 gui=undercurl
-    hi SpellCap    guisp=#7070F0 gui=undercurl
-    hi SpellLocal  guisp=#70F0F0 gui=undercurl
-    hi SpellRare   guisp=#FFFFFF gui=undercurl
+    hi SpellBad    guisp=#FF0000 gui=undercurl cterm=underline
+    hi SpellCap    guisp=#7070F0 gui=undercurl cterm=underline
+    hi SpellLocal  guisp=#70F0F0 gui=undercurl cterm=underline
+    hi SpellRare   guisp=#FFFFFF gui=undercurl cterm=underline
 endif
 hi Statement       guifg=#F92672               gui=bold
 hi StatusLine      guifg=#455354 guibg=fg
@@ -138,10 +138,14 @@ if &t_Co > 255
       hi Normal       ctermfg=252 ctermbg=NONE
       hi CursorLine               ctermbg=234   cterm=NONE
       hi CursorLineNr ctermfg=208               cterm=NONE
+      hi VisualNOS                   ctermbg=241
+      hi Visual                      ctermbg=238
    else
       hi Normal       ctermfg=252 ctermbg=233
       hi CursorLine               ctermbg=234   cterm=NONE
       hi CursorLineNr ctermfg=208               cterm=NONE
+      hi VisualNOS                   ctermbg=238
+      hi Visual                      ctermbg=235
    endif
    hi Boolean         ctermfg=135
    hi Character       ctermfg=144
@@ -199,10 +203,10 @@ if &t_Co > 255
    hi SpecialComment  ctermfg=245               cterm=bold
    hi Special         ctermfg=81
    if has("spell")
-       hi SpellBad                ctermbg=52
-       hi SpellCap                ctermbg=17
-       hi SpellLocal              ctermbg=17
-       hi SpellRare  ctermfg=NONE ctermbg=NONE  cterm=reverse
+       hi SpellBad term=reverse cterm=undercurl ctermbg=None ctermfg=196
+       hi SpellCap term=reverse cterm=undercurl ctermbg=17 ctermfg=63
+       hi SpellRare term=reverse cterm=undercurl ctermbg=17 ctermfg=231
+       hi SpellLocal term=underline cterm=undercurl ctermbg=None ctermfg=87
    endif
    hi Statement       ctermfg=161               cterm=bold
    hi StatusLine      ctermfg=238 ctermbg=253
@@ -218,8 +222,6 @@ if &t_Co > 255
    hi Underlined      ctermfg=244               cterm=underline
 
    hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
-   hi VisualNOS                   ctermbg=238
-   hi Visual                      ctermbg=235
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
